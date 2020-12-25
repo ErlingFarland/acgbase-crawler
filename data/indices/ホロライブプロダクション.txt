@@ -1,2 +1,3 @@
-{"title": "\u30db\u30ed\u30e9\u30a4\u30d6\u30d7\u30ed\u30c0\u30af\u30b7\u30e7\u30f3", "source": "ja.wikipedia.org"}
-{"title": "Template:\u30db\u30ed\u30e9\u30a4\u30d6\u30d7\u30ed\u30c0\u30af\u30b7\u30e7\u30f3", "source": "ja.wikipedia.org"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f138e6072084619db95e8b508a31e98e5d02e2ba176e0279bbf91450a42ece44
+size 241

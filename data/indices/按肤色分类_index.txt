@@ -1,6 +1,3 @@
-白色皮肤
-褐色皮肤
-黑色皮肤
-灰色皮肤
-绿色皮肤
-青色皮肤
+version https://git-lfs.github.com/spec/v1
+oid sha256:188ac754a5f403692b2760e1855edfd4aa0b9cefbd80a82fbacf146d15c0cd9d
+size 77

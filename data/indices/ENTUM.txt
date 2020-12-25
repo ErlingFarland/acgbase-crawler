@@ -1,4 +1,3 @@
-{"title": "ENTUM", "source": "ja.wikipedia.org"}
-{"title": "\u732b\u5bae\u3072\u306a\u305f", "source": "ja.wikipedia.org"}
-{"title": "\u30df\u30e9\u30a4\u30a2\u30ab\u30ea", "source": "ja.wikipedia.org"}
-{"title": "\u3082\u3061\u3072\u3088\u3053", "source": "ja.wikipedia.org"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b0b1ae8a8ec24c6edf4cbea61c71a67df8c265ae4facde50f338d757fb9ead11
+size 277
