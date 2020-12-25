@@ -1,6 +1,6 @@
 import unittest
 
-from lib.utils.wiki import read_template
+from lib.utils.wiki import read_template, clean_text
 
 
 class MyTestCase(unittest.TestCase):
@@ -28,6 +28,10 @@ class MyTestCase(unittest.TestCase):
         result = read_template(text, '声优信息', ['生日', '血型'])
         self.assertEqual(result['生日'], '1991年6月26日')
 
+    def test_clean(self):
+        text = "[[森川智之|森川 智之]]"
+        text = clean_text(text)
+        print(text)
 
 if __name__ == '__main__':
     unittest.main()

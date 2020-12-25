@@ -23,6 +23,8 @@ _collection_names = {
 def _to_class(data, clazz):
     is_collection = _extract_collection(clazz)
     is_opt = _is_optional(clazz)
+    if data is None:
+        return None
     if is_opt is not None:
         if data is None:
             return None
@@ -62,6 +64,8 @@ def _to_class(data, clazz):
 def _to_json(data, clazz):
     is_collection = _extract_collection(clazz)
     is_opt = _is_optional(clazz)
+    if data is None:
+        return None
     if is_opt is not None:
         if data is None:
             return None

@@ -51,6 +51,27 @@ class CVInfo:
 class AnimeInfo:
     name: str
     country: str
+    page_title: None
     author: List[str]
     design: List[str]
+    music: List[str]
     production: List[str]
+
+@dataclass
+class CharacterJAName:
+    name: str
+    other_names: List[str]
+    cv: str
+
+@dataclass
+class CharacterZHName:
+    name: str
+    other_names: List[str]
+    cv: str
+
+@dataclass
+class PairedAnimeInfo:
+    ja_info: AnimeInfo
+    zh_info: AnimeInfo
+    ja_characters: List[CharacterJAName]
+    zh_characters: List[CharacterZHName]
