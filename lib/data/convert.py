@@ -16,7 +16,8 @@ def class_to_json(data: T) -> Any:
 _collection_names = {
     'List': list,
     'Set': set,
-    'Tuple': tuple
+    'Tuple': tuple,
+    'Dict': dict
 }
 
 
@@ -37,7 +38,7 @@ def _to_class(data, clazz):
             return data
         else:
             return clazz(**{
-                k: _to_class(data[k], t)
+                k: _to_class(data[k], t) if k in data else None
                 for k, t in clazz.__annotations__.items()
             })
     else:

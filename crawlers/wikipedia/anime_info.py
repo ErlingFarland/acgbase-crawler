@@ -54,13 +54,13 @@ def get_ja_anime(title) -> Tuple[AnimeInfo, List[CharacterJAName], Optional[str]
 
 
 def parse_ja_characters(text, full_source, visited, depth) -> Iterable[CharacterJAName]:
-    pairs = re.findall(r";\s*(.+?(?:（.+）.*?)?)\n:\s*(?:声|\[\[\s*声優\s*\|\s*声\s*\]\])\s*-\s*(.+?)\n", text)
+    pairs = re.findall(r";\s*(.+?)\n:\s*(?:声|\[\[\s*声優\s*\|\s*声\s*\]\])\s*-\s*(.+?)\n", text)
     for ch, cv_list in pairs:
-        other_names = re.search(r"（([^\n]+)）", ch)
-        ch = re.sub(r"\{|\}|Visible anchor\s*\||（.+?）", "", ch)
+        other_names = re.findall(r"（([^\n]+)）", ch)
+        ch = re.sub(r"（.+?）", "", ch)
         ch = clean_text(ch).strip()
         if other_names:
-            other_names = other_names.group(1).split('、')
+            other_names = [o for ot in other_names for o in ot.split('、')]
         else:
             other_names = []
         cv = clean_text(cv_list)
