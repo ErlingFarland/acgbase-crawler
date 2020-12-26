@@ -19,18 +19,10 @@ class RChar_CV:
 
 
 @dataclass
-class RChar_EyesOutlook:
-    color: Optional[str] = None
-    shape: List[str] = empty_list()
-    eyebrow_color: Optional[str] = None
-
-
-@dataclass
-class RChar_HairOutlook:
+class RChar_ComponentOutlook:
     color: Optional[str] = None
     shape: List[str] = empty_list()
     features: List[str] = empty_list()
-
 
 @dataclass
 class RChar_ValueDesc:
@@ -40,8 +32,9 @@ class RChar_ValueDesc:
 
 @dataclass
 class RChar_BodyOutlook:
-    eyes: RChar_EyesOutlook = empty_class(RChar_EyesOutlook)
-    hair: RChar_HairOutlook = empty_class(RChar_HairOutlook)
+    eyes: RChar_ComponentOutlook = empty_class(RChar_ComponentOutlook)
+    eyebrows: RChar_ComponentOutlook = empty_class(RChar_ComponentOutlook)
+    hair: RChar_ComponentOutlook = empty_class(RChar_ComponentOutlook)
     height: RChar_ValueDesc = empty_class(RChar_ValueDesc)
     weight: RChar_ValueDesc = empty_class(RChar_ValueDesc)
     gender: Optional[RGender] = None
