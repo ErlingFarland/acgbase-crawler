@@ -48,7 +48,7 @@ class RChar_BodyOutlook:
     disease: List[str] = empty_list()
     hand_features: List[str] = empty_list()
     mouth: List[str] = empty_list()
-    tags: List[str] = empty_list()
+    features: List[str] = empty_list()
 
 @dataclass
 class RChar_ClothOutlook:
@@ -81,6 +81,7 @@ class RChar_Voice:
     cv: List[RChar_CV] = empty_list()
     timbre: RChar_VoiceTimbre = empty_class(RChar_VoiceTimbre)
     pitch: Optional[RChar_VoicePitch] = None
+    features: List[str] = empty_list()
 
 @dataclass
 class RChar_Personality:
@@ -111,9 +112,11 @@ class RChar_SocialRelationship:
 class RCharacter:
     page_name: str
     belongs_to: List[str] = empty_list()
+    voice: RChar_Voice = empty_class(RChar_Voice)
     age: RChar_ValueDesc = empty_class(RChar_ValueDesc)
     names: List[RChar_CharName] = empty_list()
     outlook: RChar_Outlook = empty_class(RChar_Outlook)
     personality: RChar_Personality = empty_class(RChar_Personality)
     social_relationship: RChar_SocialRelationship = empty_class(RChar_SocialRelationship)
     tags: List[str] = empty_list()
+    version = '1'

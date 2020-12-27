@@ -1,0 +1,84 @@
+from dataclasses import dataclass
+from enum import Enum
+from typing import Dict, Optional, List
+
+from lib.data.result.utils import empty_dict, empty_class, empty_list, RGender, RValue
+
+
+@dataclass
+class AgeRange:
+    min: int
+    max: int
+
+
+@dataclass
+class RChar_CV:
+    name: Optional[str] = None
+    language: List[str] = empty_list()
+    tags: List[str] = empty_list()
+
+
+@dataclass
+class RChar_BodyOutlook:
+    height: Optional[RValue] = None
+    weight: Optional[RValue] = None
+    gender: Optional[RGender] = None
+    age: Optional[RValue] = None
+    age_range: Optional[AgeRange] = None
+
+
+@dataclass
+class RChar_ClothOutlook:
+    gender: Optional[RGender] = None
+
+
+@dataclass
+class RChar_Outlook:
+    body: RChar_BodyOutlook = empty_class(RChar_BodyOutlook)
+    clothing: RChar_ClothOutlook = empty_class(RChar_ClothOutlook)
+
+
+@dataclass
+class RChar_VoiceTimbre:
+    gender: Optional[RGender] = None
+    age_range: Optional[AgeRange] = None
+
+
+class RChar_VoicePitch(Enum):
+    ultra_low = 'ultra_low'
+    low = 'low'
+    average = 'average'
+    high = 'high'
+    ultra_high = 'ultra_high'
+
+
+@dataclass
+class RChar_Voice:
+    cv: List[RChar_CV] = empty_list()
+    timbre: RChar_VoiceTimbre = empty_class(RChar_VoiceTimbre)
+    pitch: Optional[RChar_VoicePitch] = None
+
+
+@dataclass
+class RChar_Personality:
+    age: Optional[RValue] = empty_class(RValue)
+    age_range: AgeRange = empty_class(AgeRange)
+
+
+@dataclass
+class RChar_CharName:
+    name: str
+    language: Optional[str] = None
+    tags: List[str] = empty_list()
+
+
+@dataclass
+class RCharacter:
+    page_name: str
+    belongs_to: List[str] = empty_list()
+    voice: RChar_Voice = empty_class(RChar_Voice)
+    age: Optional[RValue] = None
+    names: List[RChar_CharName] = empty_list()
+    outlook: RChar_Outlook = empty_class(RChar_Outlook)
+    tags: List[str] = empty_list()
+    images: List[str] = empty_list()

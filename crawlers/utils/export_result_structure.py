@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from lib.data.result.character import RCharacter
+from lib.data.result.character.v1 import RCharacter
 
 def walk(depth, path, value, name, root):
     print(name)
